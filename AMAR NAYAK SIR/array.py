@@ -138,7 +138,7 @@ DECLARE x: ARRAY[0:1][0:1] OF INTEGER
 Integer x[2][2]
 Integer y[3][3]
 
-
+#---------------------
 
 DECLARE x: ARRAY[2][2] OF INTEGER
 
@@ -147,5 +147,141 @@ FOR r := 0 TO 1        # r stands for Rows
         # Array access happens here: x[r][c]
     ENDFOR
 ENDFOR
-
 '''
+x = [[0, 0], [0, 0]]
+
+for r in range(2):
+    for c in range(2):
+        x[r][c] = int(input(f"Enter x[{r}][{c}]: "))
+
+print("The Matrix is:")
+for row in x:
+    print(row)
+
+#### SUM OF All ELEMENTS OF 2D ARRAY ####
+'''
+DECLARE x : ARRAY [3][3] OF INTEGER
+DECLARE Sum : INTEGER
+
+SET Sum := 0
+
+FOR r := 0 TO 2
+    FOR c := 0 TO 2
+        READ x [r][c]
+    ENDFOR
+ENDFOR
+
+FOR r := 0 TO 2
+    FOR c := 0 TO 2
+        Sum := Sum + x [r][c]
+    ENDFOR
+ENDFOR
+
+PRINT Sum
+'''
+x = [[0 for _ in range(3)] for _ in range(3)]
+sum_val = 0
+
+for r in range(3):
+    for c in range(3):
+        x[r][c] = int(input(f"Enter element for [{r}][{c}]: "))
+
+for r in range(3):
+    for c in range(3):
+        sum_val = sum_val + x[r][c]
+
+print("The sum is:", sum_val)
+
+#### COUNT TOTAL NO. OF EVEN ODD INSIDE METRIX ####
+'''
+DECLARE x: ARRAY [3][3] OF INTEGER
+DECLARE even: INTEGER
+DECLARE odd: INTEGER
+
+SET even := 0, odd := 0
+
+# Input Loop
+FOR r := 0 TO 2
+    FOR c := 0 TO 2
+        READ x[r][c]
+    ENDFOR
+ENDFOR
+
+# Processing Loop
+FOR r := 0 TO 2
+    FOR c := 0 TO 2
+        IF x[r][c] mod 2 == 0 THEN
+            even := even + 1
+        ELSE
+            odd := odd + 1
+        ENDIF
+    ENDFOR
+ENDFOR
+
+PRINT even
+PRINT odd
+'''
+x = [[0 for _ in range(3)] for _ in range(3)]
+even = 0
+odd = 0
+
+for r in range(3):
+    for c in range(3):
+        x[r][c] = int(input(f"Enter element for [{r}][{c}]: "))
+
+for r in range(3):
+    for c in range(3):
+        if x[r][c] % 2 == 0:
+            even += 1
+        else:
+            odd += 1
+
+print(f"Even numbers: {even}")
+print(f"Odd numbers: {odd}")
+
+#### Addition of 3x3 Matrix ####
+''''
+DECLARE x: ARRAY[3][3] OF INTEGER
+DECLARE y: ARRAY[3][3] OF INTEGER
+DECLARE z: ARRAY[3][3] OF INTEGER
+
+FOR r := 0 TO 2
+    FOR c := 0 TO 2
+        READ x[r][c]
+        READ y[r][c]
+    ENDFOR
+ENDFOR
+
+FOR r := 0 TO 2
+    FOR c := 0 TO 2
+        z[r][c] := x[r][c] + y[r][c]
+    ENDFOR
+ENDFOR
+
+FOR r := 0 TO 2
+    FOR c := 0 TO 2
+        PRINT z[r][c]
+    ENDFOR
+ENDFOR
+'''
+x = [[0]*3 for _ in range(3)]
+y = [[0]*3 for _ in range(3)]
+z = [[0]*3 for _ in range(3)]
+
+for r in range(3):
+    for c in range(3):
+        x[r][c] = int(input(f"Enter x[{r}][{c}]: "))
+        y[r][c] = int(input(f"Enter y[{r}][{c}]: "))
+
+for r in range(3):
+    for c in range(3):
+        z[r][c] = x[r][c] + y[r][c]
+
+print("Matrix Z (Sum):")
+for row in z:
+    print(row)
+
+
+
+
+
